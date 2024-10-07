@@ -1,66 +1,64 @@
-# Commands for Device Control
+# Comandos para Controle do Dispositivo
 
-## 1. Restart Command
-- **Command Character:** `r`
-- **Description:** Restarts the device.
-- **JSON Payload Example:**
+## 1. Comando de Reinício
+- **Caracter de Comando:** `r`
+- **Descrição:** Reinicia o dispositivo.
+- **Exemplo de Payload JSON:**
   ```json
   {"cmd":"r"}
   ```
 
 ---
 
-## 2. List Directory Command
-- **Command Character:** `l`
-- **Required Payload:**
-  - `dir`: The directory path to list (default is `"/"`).
-- **Description:** Lists all files in the specified directory and publishes the results.
-- **JSON Payload Example:**
+## 2. Comando para Listar Diretório
+- **Caracter de Comando:** `l`
+- **Payload Requerido:**
+  - `dir`: O caminho do diretório a ser listado (o padrão é `"/"`).
+- **Descrição:** Lista todos os arquivos no diretório especificado e publica os resultados.
+- **Exemplo de Payload JSON:**
   ```json
   {"cmd":"l", "dir":"/some_directory"}
   ```
 
 ---
 
-## 3. Get File Command
-- **Command Character:** `g`
-- **Required Payload:**
-  - `fn`: The filename to retrieve.
-- **Description:** Reads the specified file and publishes its content.
-- **JSON Payload Example:**
+## 3. Comando para Obter Arquivo
+- **Caracter de Comando:** `g`
+- **Payload Requerido:**
+  - `fn`: O nome do arquivo a ser recuperado.
+- **Descrição:** Lê o arquivo especificado e publica seu conteúdo.
+- **Exemplo de Payload JSON:**
   ```json
   {"cmd":"g", "fn":"example.txt"}
   ```
 
 ---
 
-## 4. Append to File Command
-- **Command Character:** `a`
-- **Required Payload:**
-  - `fn`: The filename to append to.
-  - `content`: The content to append.
-- **Description:** Appends the provided content to the specified file.
-- **JSON Payload Example:**
+## 4. Comando para Anexar a um Arquivo
+- **Caracter de Comando:** `a`
+- **Payload Requerido:**
+  - `fn`: O nome do arquivo ao qual anexar.
+  - `content`: O conteúdo a anexar.
+- **Descrição:** Anexa o conteúdo fornecido ao arquivo especificado.
+- **Exemplo de Payload JSON:**
   ```json
-  {"cmd":"a", "fn":"example.txt", "content":"New content to append."}
+  {"cmd":"a", "fn":"example.txt", "content":"Novo conteúdo a anexar."}
   ```
 
 ---
 
-## 5. Delete File Command
-- **Command Character:** `d`
-- **Required Payload:**
-  - `fn`: The filename to delete.
-- **Description:** Deletes the specified file and publishes a success or failure message.
-- **JSON Payload Example:**
+## 5. Comando para Deletar Arquivo
+- **Caracter de Comando:** `d`
+- **Payload Requerido:**
+  - `fn`: O nome do arquivo a ser deletado.
+- **Descrição:** Deleta o arquivo especificado e publica uma mensagem de sucesso ou falha.
+- **Exemplo de Payload JSON:**
   ```json
   {"cmd":"d", "fn":"example.txt"}
   ```
 
 ---
 
-## 6. Unknown Command
-- **Command Character:** (Any character not recognized by the above commands)
-- **Description:** Publishes "Unknown command" to the specified topic.
-
----
+## 6. Comando Desconhecido
+- **Caracter de Comando:** (Qualquer caractere não reconhecido pelos comandos acima)
+- **Descrição:** Publica "Comando desconhecido" no tópico especificado.
